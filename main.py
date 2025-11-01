@@ -12,4 +12,5 @@ print(bilgi)
 nan = veri.isna().sum()
 print(nan)
 
-
+veri["start_date"] = pd.to_datetime(veri["start_date"], errors="coerce")
+veri.info()
