@@ -12,5 +12,12 @@ print(bilgi)
 nan = veri.isna().sum()
 print(nan)
 
+#start_date sütunundaki veriyi datetime tipine dönüştürdüm dönüşemeyenler NaT oldu
 veri["start_date"] = pd.to_datetime(veri["start_date"], errors="coerce")
 veri.info()
+
+veri = veri.dropna(subset=["start_date"])
+veri.shape
+veri.info()
+veri.head()
+
