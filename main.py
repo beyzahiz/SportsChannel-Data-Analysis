@@ -64,3 +64,5 @@ plt.figure(figsize=(8,6))
 sns.heatmap(corr_matrix, annot=True, cmap="coolwarm",fmt=".2f")
 plt.title("Korelasyon Matrisi")
 plt.show(block=True)
+
+veri.describe()
