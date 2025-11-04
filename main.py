@@ -24,5 +24,8 @@ veri["channel_age"] = (today-veri["start_date"]).dt.days/365
 veri["views_per_video"] = veri["view_count"] / veri["video_count"]
 veri["subs_per_view"] = veri["subscriber_count"] / veri["view_count"]
 print(veri.head())
-print(veri.info())
+#print(veri.info())
 
+#eksik değerleri temizliyorum
+veri = veri.dropna(subset=["views_per_video", "subs_per_view"])
+print(veri.info)
