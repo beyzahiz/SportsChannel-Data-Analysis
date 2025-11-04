@@ -30,8 +30,8 @@ veri["subs_per_view"] = veri["subscriber_count"] / veri["view_count"]
 
 #eksik değerleri temizliyorum
 veri = veri.dropna(subset=["views_per_video", "subs_per_view"])
-print(veri.head())
-print(veri.info())
+#print(veri.head())
+#print(veri.info())
 
 #Grafik çiziyorum
 plt.scatter(veri["channel_age"], veri["subscriber_count"], color="r")
@@ -55,3 +55,12 @@ plt.title("İzlenme Sayısı - Abone Sayısı İlişkisi")
 #Correlation
 correlation = veri["subscriber_count"].corr(veri["view_count"])
 print("Abone sayısı ile izlenme sayısı arasındaki korelasyon: ",correlation)
+
+#Correlation matrixi
+corr_matrix = veri[["subscriber_count","view_count","video_count", "channel_age", "views_per_video", "subs_per_view"]].corr()
+
+#görselleştirme
+plt.figure(figsize=(8,6))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm",fmt=".2f")
+plt.title("Korelasyon Matrisi")
+plt.show(block=True)
