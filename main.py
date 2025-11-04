@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #csv'nin olduğu dosya yolunu yazmak gerekiyor
 veri = pd.read_csv("data/yt_sports_channels_stats.csv")
@@ -23,9 +24,24 @@ today = pd.Timestamp.today()
 veri["channel_age"] = (today-veri["start_date"]).dt.days/365
 veri["views_per_video"] = veri["view_count"] / veri["video_count"]
 veri["subs_per_view"] = veri["subscriber_count"] / veri["view_count"]
-print(veri.head())
+#print(veri.head())
 #print(veri.info())
 
 #eksik değerleri temizliyorum
 veri = veri.dropna(subset=["views_per_video", "subs_per_view"])
-print(veri.info)
+print(veri.head())
+print(veri.info())
+
+#Grafik çiziyorum
+plt.scatter(veri["channel_age"], veri["subscriber_count"], color="r")
+plt.xlabel("Kanal Yaşı (Yıl)")
+plt.ylabel("Abone Sayısı")
+plt.title("Abone-Kanal Yaşı Grafiği")
+plt.show()
+
+plt.scatter(veri["channel_age"], veri["view_count"], color="b")
+plt.xlabel("Kanal Yaşı (yıl)")
+plt.ylabel("Toplam İzlenme Sayısı")
+plt.title("İzlenme Sayısı - Kanal Yaşı İlişkisi")
+plt.show()
+
