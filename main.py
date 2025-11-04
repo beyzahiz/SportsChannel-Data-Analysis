@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 #csv'nin olduğu dosya yolunu yazmak gerekiyor
 veri = pd.read_csv("data/yt_sports_channels_stats.csv")
@@ -37,11 +38,20 @@ plt.scatter(veri["channel_age"], veri["subscriber_count"], color="r")
 plt.xlabel("Kanal Yaşı (Yıl)")
 plt.ylabel("Abone Sayısı")
 plt.title("Abone-Kanal Yaşı Grafiği")
-plt.show()
+#plt.show()
 
 plt.scatter(veri["channel_age"], veri["view_count"], color="b")
 plt.xlabel("Kanal Yaşı (yıl)")
 plt.ylabel("Toplam İzlenme Sayısı")
 plt.title("İzlenme Sayısı - Kanal Yaşı İlişkisi")
-plt.show()
+#plt.show()
 
+plt.scatter(veri["subscriber_count"], veri["view_count"], color="g")
+plt.xlabel("Abone Sayısı")
+plt.ylabel("Toplam İzlenme Sayısı")
+plt.title("İzlenme Sayısı - Abone Sayısı İlişkisi")
+#plt.show()
+
+#Correlation
+correlation = veri["subscriber_count"].corr(veri["view_count"])
+print("Abone sayısı ile izlenme sayısı arasındaki korelasyon: ",correlation)
