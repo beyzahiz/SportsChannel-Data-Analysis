@@ -1,3 +1,10 @@
+"""
+SportsChannel Veri Analizi Projesi
+Bu script YouTube spor kanalları üzerinde veri temizleme, dönüştürme ve görselleştirme işlemlerini içerir.
+
+"""
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -34,23 +41,29 @@ veri = veri.dropna(subset=["views_per_video", "subs_per_view"])
 #print(veri.info())
 
 #Grafik çiziyorum
+plt.figure(figsize=(10,5))
 plt.scatter(veri["channel_age"], veri["subscriber_count"], color="r")
 plt.xlabel("Kanal Yaşı (Yıl)")
 plt.ylabel("Abone Sayısı")
 plt.title("Abone-Kanal Yaşı Grafiği")
-#plt.show()
+plt.savefig("images/channel_age_vs_subs.png")
+plt.show()
 
+plt.figure(figsize=(10,5))
 plt.scatter(veri["channel_age"], veri["view_count"], color="b")
 plt.xlabel("Kanal Yaşı (yıl)")
 plt.ylabel("Toplam İzlenme Sayısı")
 plt.title("İzlenme Sayısı - Kanal Yaşı İlişkisi")
-#plt.show()
+plt.savefig("images/channel_age_vs_views.png")
+plt.show()
 
+plt.figure(figsize=(10,5))
 plt.scatter(veri["subscriber_count"], veri["view_count"], color="g")
 plt.xlabel("Abone Sayısı")
 plt.ylabel("Toplam İzlenme Sayısı")
 plt.title("İzlenme Sayısı - Abone Sayısı İlişkisi")
-#plt.show()
+plt.savefig("images/subscribers_vs_views.png")
+plt.show()
 
 #Correlation
 correlation = veri["subscriber_count"].corr(veri["view_count"])
@@ -60,9 +73,10 @@ print("Abone sayısı ile izlenme sayısı arasındaki korelasyon: ",correlation
 corr_matrix = veri[["subscriber_count","view_count","video_count", "channel_age", "views_per_video", "subs_per_view"]].corr()
 
 #görselleştirme
-plt.figure(figsize=(8,6))
+plt.figure(figsize=(10,5))
 sns.heatmap(corr_matrix, annot=True, cmap="coolwarm",fmt=".2f")
 plt.title("Korelasyon Matrisi")
+plt.savefig("images/correlation_matrix.png")
 plt.show(block=True)
 
 veri.describe()
