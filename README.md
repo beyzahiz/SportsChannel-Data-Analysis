@@ -33,31 +33,21 @@ Proje, veri temizleme → veri dönüştürme → görselleştirme adımlarını
 
 Tüm grafik dosyaları **images/** klasöründe saklanmaktadır:
 
+### Abone Sayısı – Kanal Yaşı
+![Abone-Kanal Yaşı Grafiği](images/channel_age_vs_subs.png)
 - **channel_age_vs_subs.png** — Kanal yaşı ve abone sayısı ilişkisi  
-- **channel_age_vs_views.png** — Kanal yaşı ve toplam izlenme ilişkisi  
+
+### İzlenme Sayısı – Kanal Yaşı
+![İzlenme-Kanal Yaşı Grafiği](images/channel_age_vs_views.png)
+- **channel_age_vs_views.png** — Kanal yaşı ve toplam izlenme ilişkisi 
+
+### İzlenme Sayısı – Abone Sayısı
+![Abone vs İzlenme Grafiği](images/subscribers_vs_views.png)
 - **subscribers_vs_views.png** — Abone → izlenme ilişkisi  
+
+### Korelasyon Matrisi
+![Korelasyon Matrisi](images/korelasyon_matrix.png)
 - **correlation_matrix.png** — Tüm metrikler arası korelasyon haritası  
-
----
-
-## 📂 Proje Klasör Yapısı
-SportsChannel-Data-Analysis/
-│
-├── data/
-│ └── yt_sports_channels_stats.csv
-│
-├── images/
-│ ├── channel_age_vs_subs.png
-│ ├── channel_age_vs_views.png
-│ ├── subscribers_vs_views.png
-│ └── correlation_matrix.png
-│
-├── src/
-│ └── main.py
-│
-├── README.md
-└── requirements.txt
-
 
 
 ---
