@@ -34,20 +34,17 @@ Proje, veri temizleme → veri dönüştürme → görselleştirme adımlarını
 Tüm grafik dosyaları **images/** klasöründe saklanmaktadır:
 
 ### Abone Sayısı – Kanal Yaşı
-![Abone-Kanal Yaşı Grafiği](images/channel_age_vs_subs.png)
-- **channel_age_vs_subs.png** — Kanal yaşı ve abone sayısı ilişkisi  
+<img src="images/channel_age_vs_subs.png" width="500"/>
 
 ### İzlenme Sayısı – Kanal Yaşı
-![İzlenme-Kanal Yaşı Grafiği](images/channel_age_vs_views.png)
-- **channel_age_vs_views.png** — Kanal yaşı ve toplam izlenme ilişkisi 
+<img src="images/channel_age_vs_views.png" width="500"/>
 
-### İzlenme Sayısı – Abone Sayısı
-![Abone vs İzlenme Grafiği](images/subscribers_vs_views.png)
-- **subscribers_vs_views.png** — Abone → izlenme ilişkisi  
+### Abone Sayısı – İzlenme Sayısı
+<img src="images/subscribers_vs_views.png" width="500"/>
 
 ### Korelasyon Matrisi
-![Korelasyon Matrisi](images/korelasyon_matrix.png)
-- **correlation_matrix.png** — Tüm metrikler arası korelasyon haritası  
+<img src="images/correlation_matrix.png" width="500"/>
+
 
 
 ---
